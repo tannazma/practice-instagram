@@ -24,6 +24,24 @@ app.get("/likes", async (req, res) => {
   res.send(allLikes);
 });
 
+app.get("/posts/:id", async (req, res) => {
+  const idAsNumber = Number(req.params.id);
+  const aPost = await prisma.post.findFirst({
+    where: {
+      id: idAsNumber,
+    },
+    include: {
+      user: true,
+      Like: true,
+    },
+  });
+  if (!aPost) {
+    res.status(404).send({ message: "Post with that id is not found" });
+    return;
+  }
+  res.status(200).send(aPost);
+});
+
 app.listen(port, () => {
   console.log(`⚡ Server listening on port: ${port}`);
 });
