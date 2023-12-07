@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "caption": "First post",
+    "imageUrl": "image1.jpg",
+    "userId": 1
+  },
+  {
+    "id": 2,
+    "caption": "Second post",
+    "imageUrl": "image2.jpg",
+    "userId": 1
+  },
+  {
+    "id": 3,
+    "caption": "Third post",
+    "imageUrl": "image3.jpg",
+    "userId": 2
+  }
+]
